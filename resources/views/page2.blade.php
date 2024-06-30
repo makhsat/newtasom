@@ -72,12 +72,12 @@
         </p>
 
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0 Bricks</div>
+            <div class="progress-bar brick-color" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">3 Bricks</div>
         </div>
     </div>
 </section>
 
-<div class="container px-4 py-5">
+<div class="container px-1 py-1">
     <h2 class="pb-2 border-bottom" id="about_us">About Us </h2>
     <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
         <div class="col d-flex flex-column align-items-start gap-2">

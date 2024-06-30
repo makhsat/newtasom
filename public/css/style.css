@@ -99,3 +99,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.brick-color {
+    background-color: #AD6944; /* Replace with your desired brick color */
+}
+
