@@ -43,5 +43,12 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
+
+        <hr class="mt-3">
+        <br>
+        <!-- Register buttons -->
+        <div class="text-center">
+            <p>Not a member? <a href="{{ route('register') }}">{{ __('Register') }}</a></p>
+        </div>
     </form>
 </x-guest-layout>
