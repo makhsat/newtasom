@@ -46,7 +46,7 @@ class StripeController extends Controller
                         'key' => 'public_name',
                         'label' => [
                             'type' => 'custom',
-                            'custom' => 'Name On Display Board',
+                            'custom' => 'Enter the name you want displayed on your brick',
                         ],
                         'type' => 'text',
                     ],
