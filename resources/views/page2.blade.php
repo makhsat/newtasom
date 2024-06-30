@@ -65,7 +65,7 @@
         <h1 class="display-5 fw-bold text-body-emphasis">"Your Support, Our Expansion"</h1>
         <p class="lead fs-4 fw-bold ">Help Us Grow: Support TASOM's New Building Fund</p>
         <a href="#" data-bs-toggle="modal" data-bs-target="#buyBrick">
-            <img src="{{ asset('images/buy_a_brick.jpg') }}" width="200" height="200" class="img-thumbnail">
+            <img src="{{ asset('images/buy_a_brick.jpg') }}" width="200" height="200" class="img-thumbnail" alt="">
         </a>
         <p class="lead fs-4 fw-bold pt-3">
             Our Goal is $400,000 = 8,000 bricks
