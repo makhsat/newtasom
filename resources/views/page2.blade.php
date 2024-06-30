@@ -96,7 +96,7 @@
                 <div class="col">
                     <div class="row row-cols-1 row-cols-sm-1 g-4">
 
-                        <div class="col d-flex flex-column gap-2">
+                        <div class="col d-flex flex-column gap-2 pt-4">
                             <h4 class="fw-semibold mb-0 text-body-emphasis">Why We Need Your Support</h4>
                             <p class="text-body-secondary">Our mission at TASOM is to create a dynamic and welcoming environment where people of all
                                 <a href=""  data-bs-toggle="modal" data-bs-target="#expandEducationalModal"> more...</a></p>

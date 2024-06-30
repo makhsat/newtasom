@@ -54,7 +54,7 @@ class StripeController extends Controller
 
             $session = Session::create([
                 'line_items' => $lineItems,
-                'custom_fields' => $customFiled,
+                //'custom_fields' => $customFiled,
                 'mode' => 'payment',
                 'success_url' => route('stripe.checkout.success', [], true) . "?session_id={CHECKOUT_SESSION_ID}",
                 'cancel_url' => route('stripe.checkout.cancel', [], true),
@@ -105,6 +105,20 @@ class StripeController extends Controller
         );
 
         return redirect()->route('home')->with($notification);
+    }
+
+    public function getBalance()
+    {
+        Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
+
+        try {
+            $balance = Balance::retrieve();
+            $available = $balance->available[0]->amount / 100; // Convert cents to dollars
+
+            return response()->json(['balance' => $available]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
 }
