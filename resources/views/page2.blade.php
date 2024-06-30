@@ -77,12 +77,12 @@
     </div>
 </section>
 
-<div class="container px-1 py-1">
+<div class="container px-1 py-1 m-2">
     <h2 class="pb-2 border-bottom" id="about_us">About Us </h2>
     <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
         <div class="col d-flex flex-column align-items-start gap-2">
             <h2 class="fw-bold text-body-emphasis">NEW TASOM</h2>
-            <p class="text-body-secondary">
+            <p class="text-body-secondary text-justify">
                 The Turkish American Society of Missouri (TASOM) is a vibrant and inclusive community
                 organization dedicated to fostering cross-cultural understanding, friendship, and collaboration.
                 As our community continues to grow, so does our need for a larger space to accommodate our
@@ -234,7 +234,7 @@
             <div class="card">
                 <img src="{{ asset('images/p3.jpg') }}" class="card-img-top" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Programs for Kids (Ages 5-12)</h5>
+                    <h5 class="card-title">Programs for Kids (Ages 5-10)</h5>
                     <p class="card-text">
                         At TASOM, we are dedicated to the holistic development of children through structured
                         programs that focus on cultural preservation, educational growth, and personal
@@ -250,7 +250,7 @@
             <div class="card">
                 <img src="{{ asset('images/p4.jpg') }}" class="card-img-top" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Youth Programs (Ages 15-23)</h5>
+                    <h5 class="card-title">Youth Programs (Ages 11-23)</h5>
                     <p class="card-text">
                         At TASOM, we are dedicated to fostering the growth and development of young people through
                         a variety of programs and activities. Our youth initiatives aim to preserve cultural heritage,
@@ -318,7 +318,7 @@
                         <a href="mailto:contact@tasom.org" class="text-dark">Email: contact@tasom.org</a>
                     </li>
                     <li>
-                        <a href="tel:+1234567890" class="text-dark">Phone: (123) 456-7890</a>
+                        <a href="tel:+13146755871" class="text-dark">Phone: (314) 675-5871</a>
                     </li>
                 </ul>
             </div>
@@ -539,7 +539,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="myModalLabel">Youth Programs (Ages 15-23)</h5>
+                <h5 class="modal-title" id="myModalLabel">Youth Programs (Ages 11-23)</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -644,7 +644,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="myModalLabel">Programs for Kids (Ages 5-12)</h5>
+                <h5 class="modal-title" id="myModalLabel">Programs for Kids (Ages 5-10)</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
