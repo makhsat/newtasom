@@ -383,6 +383,7 @@
                 </div>
                 <div class="modal-body">
                     <p>We are looking forward to have your donation.</p>
+                    <p><strong>1</strong> Brick is <strong>$50</strong> and, we are looking for <strong>8000</strong> bricks.</p>
                     <p>New Tasom Zelle Account:
                         <strong id="zelleEmail" onclick="copyToClipboard('newtasom@gmail.com')" style="cursor: pointer;">
                             newtasom@gmail.com
