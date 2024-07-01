@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Tasom</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -68,11 +69,9 @@
             <a href="#" data-bs-toggle="modal" data-bs-target="#zelleConfirmation">
                 <img src="{{ asset('images/buy_a_brick.jpg') }}" width="200" height="200" class="img-thumbnail" alt="">
             </a>
-
             <p class="lead fs-4 fw-bold pt-3">
                 Our Goal is $400,000 = 8,000 bricks
             </p>
-
             <div class="progress">
                 <div class="progress-bar brick-color" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">3 Bricks</div>
             </div>
@@ -166,6 +165,9 @@
                             </div>
                         </div>
                         {{--  ------------------------    --}}
+
+
+
                         <div class="col d-flex flex-column gap-2">
                             <h4 class="fw-semibold mb-0 text-body-emphasis">Our Vision for the Future</h4>
                             <p class="text-body-secondary">With a new, larger building, TASOM will be better equipped to:
@@ -329,7 +331,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="buyBrickLabel">Buy a Brick</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form method="post" action="{{ route('stripe.checkout') }}">
                     <div class="modal-body">
@@ -380,7 +381,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="noZelleModalLabel">Zelle Account Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p>We are looking forward to have your donation.</p>
@@ -426,58 +426,6 @@
 
 
 
-
-
-    <!-- modal content -->
-    <div id="buyBrick" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Buy a Brick</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form method="post" action="{{ route('stripe.checkout') }}">
-                    <div class="modal-body">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label class="form-label" for="pieces">Number of Bricks($50 per brick):</label>
-                                    <input
-                                        type="number"
-                                        id="pieces"
-                                        name="pieces"
-                                        value="{{ old('pieces') }}"
-                                        class="form-control {{ $errors->has('pieces') ? 'is-invalid' : '' }}"
-                                        placeholder="Enter the number of pieces"
-                                        required
-                                        min="1"
-                                        step="1"
-                                        oninput="calculateTotalPrice()"
-                                    >
-                                    @error('pieces')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="total_price">Total Price (USD):</label>
-                                    <input
-                                        type="text"
-                                        id="total_price"
-                                        name="total_price"
-                                        class="form-control"
-                                        readonly
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <input class="btn btn-warning waves-effect waves-light" type="submit" value="Purchase">
-                        <button type="button" class="btn btn-light waves-effect" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
 
     <!-- modal content -->
     <div id="p1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -815,24 +763,21 @@
             var buyBrickModal = new bootstrap.Modal(document.getElementById('buyBrick'));
             buyBrickModal.show();
         }
-
         function showNoZelleModal() {
             var noZelleModal = new bootstrap.Modal(document.getElementById('noZelleModal'));
             noZelleModal.show();
         }
-
     </script>
 
     <script>
-    function calculateTotalPrice() {
-        const pieces = document.getElementById('pieces').value;
-        const totalPrice = pieces * 50;
-        document.getElementById('total_price').value = totalPrice.toFixed(2);
-    }
-
-    // Initialize the total price when the modal is shown
-    document.getElementById('buyBrick').addEventListener('shown.bs.modal', calculateTotalPrice);
-</script>
+        function calculateTotalPrice() {
+            const pieces = document.getElementById('pieces').value;
+            const totalPrice = pieces * 50;
+            document.getElementById('total_price').value = totalPrice.toFixed(2);
+        }
+        // Initialize the total price when the modal is shown
+        document.getElementById('buyBrick').addEventListener('shown.bs.modal', calculateTotalPrice);
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -873,8 +818,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
 
 </body>
 </html>
