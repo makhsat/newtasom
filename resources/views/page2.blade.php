@@ -357,7 +357,7 @@
                                     @error('pieces')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="total_price">Total Price (USD):</label>
+                                    <label class="form-label" for="total_price">Total Cost + %3 Fee(USD):</label>
                                     <input
                                         type="text"
                                         id="total_price"
@@ -775,7 +775,7 @@
     <script>
         function calculateTotalPrice() {
             const pieces = document.getElementById('pieces').value;
-            const totalPrice = pieces * 50;
+            const totalPrice = (pieces * 50) * 1.03;
             document.getElementById('total_price').value = totalPrice.toFixed(2);
         }
         // Initialize the total price when the modal is shown

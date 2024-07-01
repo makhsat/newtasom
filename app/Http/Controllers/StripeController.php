@@ -28,7 +28,7 @@ class StripeController extends Controller
         // Retrieve validated input
         $name = $request->input('name');
         $pieces = $request->input('pieces');
-        $totalPrice = $pieces * 50; // Ensure total price matches pieces * 50
+        $totalPrice = ($pieces * 50) * 1.03; // Ensure total price matches pieces * 50
 
         try {
             $lineItems[] = [
@@ -37,7 +37,7 @@ class StripeController extends Controller
                     'product_data' => [
                         'name' => 'Brick Purchase',
                     ],
-                    'unit_amount' => 50 * 100, // Price in cents
+                    'unit_amount' => ($totalPrice / $pieces) * 100, // Price in cents
                 ],
                 'quantity' => $pieces,
             ];
