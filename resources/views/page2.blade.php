@@ -76,8 +76,11 @@
                 Our Goal is $400,000 for Initial Costs.
             </p>
             <div class="progress">
-                <div class="progress-bar brick-color" role="progressbar" style="width: 1%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">3 Bricks</div>
+                <div class="progress-bar brick-color" role="progressbar" style="width: 2.5%;" aria-valuenow="2.5" aria-valuemin="0" aria-valuemax="100">206 Bricks</div>
             </div>
+            <p class="lead fw-bold">
+                            We Have Received <strong>206</strong> Bricks So Far.
+                        </p>
         </div>
     </section>
 
