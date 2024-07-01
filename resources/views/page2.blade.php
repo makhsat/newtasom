@@ -368,7 +368,6 @@
                     </div>
                     <div class="modal-footer">
                         <input class="btn btn-warning" type="submit" value="Purchase">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
                     </div>
                 </form>
             </div><!-- /.modal-content -->
