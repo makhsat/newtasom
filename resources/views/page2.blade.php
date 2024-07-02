@@ -78,7 +78,7 @@
 
              <div class="brick-wall mt-4" id="brick-wall"></div>
             <p class="lead fw-bold">
-                            We Have Received <strong>330</strong> Bricks So Far. <span style="font-weight: normal;">(daily updated)</span>
+                         We Have Received <strong id="brick-count"></strong> Bricks So Far. <span style="font-weight: normal;">(daily updated)</span>
                         </p>
         </div>
     </section>
@@ -859,8 +859,21 @@
         }
 
         // Example usage: filling the wall with 330 bricks
-        fillBrickWall(330);
+        fillBrickWall(401);
     </script>
+ <script>
+         // Define the variable for the number of sold bricks
+         var numberOfSoldBricks = 401; // Update this variable as needed
+
+         // Function to update the brick count in the HTML
+         function updateBrickCount() {
+             // Get the element by its ID and update its content
+             document.getElementById("brick-count").innerText = numberOfSoldBricks;
+         }
+
+         // Call the function to update the count when the page loads
+         window.onload = updateBrickCount;
+     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
