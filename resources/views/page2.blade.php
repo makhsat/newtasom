@@ -859,11 +859,11 @@
         }
 
         // Example usage: filling the wall with 330 bricks
-        fillBrickWall(401);
+        fillBrickWall(403);
     </script>
  <script>
          // Define the variable for the number of sold bricks
-         var numberOfSoldBricks = 401; // Update this variable as needed
+         var numberOfSoldBricks = 403; // Update this variable as needed
 
          // Function to update the brick count in the HTML
          function updateBrickCount() {
