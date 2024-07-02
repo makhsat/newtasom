@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    height: 100vh;
+    height: 100%;
     text-align: center; /* Center text */
 }
 
@@ -106,5 +106,55 @@
 
 .text-justify {
     text-align: justify;
+}
+
+ .brick-wall {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            align-content: flex-start;
+            width: 100%;
+            max-width: 100%;
+            height: calc(20px * 9.4 + 16px); /* 8 bricks height with margin */
+            margin: 0 auto;
+            border: 2px solid #f0f0f0;
+            background-color: #f9f9f9;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .brick {
+            position: relative;
+            width: calc(100% / 10 - 4px);
+            height: 20px;
+            margin: 2px;
+            background-color: #d2691e;
+            border: 1px solid #f0f0f0;
+        }
+        .partial-brick {
+            position: relative;
+            height: 20px;
+            margin: 2px;
+            background-color: #d2691e;
+            border: 1px solid #f0f0f0;
+        }
+.brick-text {
+    position: absolute;
+    color: darkred;
+    font-size: 12px; /* Default font size */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .brick-text {
+        font-size: 10px; /* Font size for tablets and small desktops */
+    }
+}
+
+@media (max-width: 576px) {
+    .brick-text {
+        font-size: 8px; /* Font size for mobile devices */
+    }
 }
 

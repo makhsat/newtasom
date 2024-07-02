@@ -63,7 +63,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container px-4 py-5 my-5 text-center">
+        <div class="container px-2 py-2 my-3 text-center">
             <h1 class="display-5 fw-bold text-body-emphasis">"Your Support, Our Expansion"</h1>
             <p class="lead fs-4 fw-bold ">Help Us Grow: Support TASOM's New Building Fund</p>
             <a href="#" data-bs-toggle="modal" data-bs-target="#zelleConfirmation">
@@ -75,9 +75,8 @@
             <p class="lead fs-4 fw-bold pt-3">
                 Our Goal is $400,000 for Initial Costs.
             </p>
-            <div class="progress">
-                <div class="progress-bar brick-color" role="progressbar" style="width: 4.1%;" aria-valuenow="4.1" aria-valuemin="0" aria-valuemax="100">330 Bricks</div>
-            </div>
+
+             <div class="brick-wall mt-4" id="brick-wall"></div>
             <p class="lead fw-bold">
                             We Have Received <strong>330</strong> Bricks So Far. <span style="font-weight: normal;">(daily updated)</span>
                         </p>
@@ -821,9 +820,51 @@
         });
     </script>
 
+ <script>
+        // JavaScript for dynamically filling the brick wall
+        function fillBrickWall(donatedBricks) {
+            const bricksPerPiece = 100;
+            const fullBricks = Math.floor(donatedBricks / bricksPerPiece);
+            const partialBrickSize = donatedBricks % bricksPerPiece;
+
+            const brickWall = document.getElementById('brick-wall');
+            brickWall.innerHTML = ''; // Clear previous bricks
+
+            const brickColors = ['#d2691e', '#cd853f', '#f4a460', '#deb887','#d2691e', '#cd853f'];
+
+            // Add full bricks
+            for (let i = 0; i < fullBricks; i++) {
+                const brickDiv = document.createElement('div');
+                brickDiv.className = 'brick';
+                brickDiv.style.backgroundColor = brickColors[i % brickColors.length];
+                const brickText = document.createElement('span');
+                brickText.className = 'brick-text';
+                brickText.innerText = 'x100';
+                brickDiv.appendChild(brickText);
+                brickWall.appendChild(brickDiv);
+            }
+
+            // Add partial brick if necessary
+        if (partialBrickSize > 0) {
+            const partialBrickDiv = document.createElement('div');
+            partialBrickDiv.className = 'partial-brick';
+            partialBrickDiv.style.width = `calc(${partialBrickSize / bricksPerPiece * 10}% - 4px)`;
+            partialBrickDiv.style.backgroundColor = brickColors[fullBricks % brickColors.length];
+            const partialBrickText = document.createElement('span');
+            partialBrickText.className = 'brick-text';
+            partialBrickText.innerText = `x${partialBrickSize}`;
+            partialBrickDiv.appendChild(partialBrickText);
+            brickWall.appendChild(partialBrickDiv);
+        }
+        }
+
+        // Example usage: filling the wall with 330 bricks
+        fillBrickWall(330);
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
