@@ -29,3 +29,8 @@ Route::post('stripe/checkout',[StripeController::class,'checkout'])->name('strip
 Route::get('stripe/checkout/success',[StripeController::class,'success'])->name('stripe.checkout.success');
 Route::get('stripe/checkout/cancel',[StripeController::class,'cancel'])->name('stripe.checkout.cancel');
 Route::post('stripe/checkout/webhook',[StripeController::class,'webhook'])->name('stripe.checkout.webhook');
+
+use App\Http\Controllers\AdminController;
+
+Route::get('/adminonly', [AdminController::class, 'showAdminPage']);
+Route::post('/adminonly', [AdminController::class, 'updateBricks']);
