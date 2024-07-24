@@ -97,6 +97,12 @@
                         members and the broader community.
                     </p>
                     <a href="#" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#zelleConfirmation" >Buy A Brick</a>
+                    <div class="share-buttons mt-3">
+                        <button class="share-button btn btn-primary facebook" onclick="shareOnFacebook()">Share on Facebook</button>
+                        <button class="share-button btn btn-primary twitter" onclick="shareOnTwitter()">Share on X</button>
+                        <button class="share-button btn btn-primary copy-link" onclick="copyLink()">Copy Link</button>
+                        <button class="share-button btn btn-primary whatsapp" onclick="shareOnWhatsApp()">Share on WhatsApp</button>
+                    </div>
                 </div>
                 <div class="col">
                     <div class="row row-cols-1 row-cols-sm-1 g-4">
@@ -235,6 +241,12 @@
                 <div class="text-center">
                     <h2 class="display-4 fw-bolder mb-4">Let's build our future together</h2>
                     <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="" data-bs-toggle="modal" data-bs-target="#zelleConfirmation" >Buy A Brick</a>
+                                        <div class=" mt-3">
+                                            <button class="share-button btn btn-primary facebook" onclick="shareOnFacebook()">Share on Facebook</button>
+                                            <button class="share-button btn btn-primary twitter" onclick="shareOnTwitter()">Share on X</button>
+                                            <button class="share-button btn btn-primary copy-link" onclick="copyLink()">Copy Link</button>
+                                            <button class="share-button btn btn-primary whatsapp" onclick="shareOnWhatsApp()">Share on WhatsApp</button>
+                                        </div>
                 </div>
             </div>
         </div>
@@ -859,11 +871,11 @@
         }
 
         // Example usage: filling the wall with 330 bricks
-        fillBrickWall(522);
+        fillBrickWall(1915);
     </script>
  <script>
          // Define the variable for the number of sold bricks
-         var numberOfSoldBricks = 522; // Update this variable as needed
+         var numberOfSoldBricks = 1915; // Update this variable as needed
 
          // Function to update the brick count in the HTML
          function updateBrickCount() {
@@ -874,6 +886,45 @@
          // Call the function to update the count when the page loads
          window.onload = updateBrickCount;
      </script>
+    <script>
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(document.title);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`, 'facebook-share-dialog', 'width=800,height=600');
+        }
+
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(document.title);
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, 'twitter-share-dialog', 'width=800,height=600');
+        }
+
+        function shareOnLinkedIn() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, 'linkedin-share-dialog', 'width=800,height=600');
+        }
+
+        function copyLink() {
+            const url = window.location.href;
+            const tempInput = document.createElement('input');
+            tempInput.style.position = 'absolute';
+            tempInput.style.left = '-9999px';
+            tempInput.value = url;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('Link copied to clipboard!');
+        }
+
+        function shareOnWhatsApp() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(document.title);
+            window.open(`https://wa.me/?text=${text}%20${url}`, 'whatsapp-share-dialog', 'width=800,height=600');
+        }
+    </script>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
