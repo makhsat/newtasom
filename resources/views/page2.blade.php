@@ -869,7 +869,6 @@
             brickWall.appendChild(partialBrickDiv);
         }
         }
-
         // Example usage: filling the wall with 330 bricks
         fillBrickWall(1915);
     </script>
